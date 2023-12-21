@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chat_with_Compose</string>
+    <string name="get_started">Get Started</string>
+    <string name="stay_connected_with_your_friends_and_family">Stay connected with your friends and family</string>
+</resources>
