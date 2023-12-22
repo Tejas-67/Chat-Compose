@@ -34,6 +34,7 @@ import com.example.chat_with_compose.component.ButtonComponent
 import com.example.chat_with_compose.component.IconComponenetImageVector
 import com.example.chat_with_compose.component.SpacerHeight
 import com.example.chat_with_compose.component.SpacerWidth
+import com.example.chat_with_compose.navigation.Home
 import com.example.chat_with_compose.ui.theme.Aqua
 
 
@@ -86,7 +87,7 @@ fun StartScreen(
                 .padding(20.dp)
                 .align(Alignment.CenterHorizontally)
         ){
-            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+            navHostController.navigate(Home)
         }
     }
 }

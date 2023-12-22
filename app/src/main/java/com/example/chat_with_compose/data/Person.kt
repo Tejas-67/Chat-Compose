@@ -26,7 +26,7 @@ val personList = listOf(
     Person(
         3,
         "Person 3",
-        R.drawable.img3
+        R.drawable.img1
     ),
     Person(
         4,
@@ -36,32 +36,32 @@ val personList = listOf(
     Person(
         5,
         "Person 5",
-        R.drawable.img5
+        R.drawable.img2
     ),
     Person(
         6,
         "Person 6",
-        R.drawable.img6
+        R.drawable.img4
     ),
     Person(
         7,
         "Person 7",
-        R.drawable.img7
+        R.drawable.img5
     ),
     Person(
         8,
         "Person 8",
-        R.drawable.img8
+        R.drawable.img6
     ),
     Person(
         9,
         "Person 9",
-        R.drawable.img9
+        R.drawable.img7
     ),
     Person(
         10,
         "Person 10",
-        R.drawable.img10
+        R.drawable.img3
     )
 )
 
