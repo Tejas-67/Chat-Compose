@@ -1,6 +1,5 @@
 package com.example.chat_with_compose.screens
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -8,8 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -36,23 +33,22 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.chat_with_compose.R
 import com.example.chat_with_compose.component.IconComponenetImageVector
-import com.example.chat_with_compose.component.IconComponentDrawable
 import com.example.chat_with_compose.component.ImageFromDrawable
 import com.example.chat_with_compose.component.SpacerHeight
 import com.example.chat_with_compose.component.SpacerWidth
 import com.example.chat_with_compose.data.Person
 import com.example.chat_with_compose.data.personList
+import com.example.chat_with_compose.navigation.Chat
 
-
-@Preview
 @Composable
-fun HomeScreen(){
+fun HomeScreen(
+    navHostController: NavHostController
+){
     Box(modifier = Modifier
         .fillMaxSize()
         .background(Color.Black),
@@ -95,7 +91,8 @@ fun HomeScreen(){
                     LazyColumn{
                         items(personList){
                             UserMessageLayout(person = it) {
-
+                                navHostController.currentBackStackEntry?.savedStateHandle?.set("data", it)
+                                navHostController.navigate(Chat)
                             }
                         }
                     }
@@ -177,9 +174,6 @@ fun UserMessageLayout(
         }
     }
 }
-
-
-
 @Composable
 fun UserStoryHorizontalItemList(persons: List<Person>){
     LazyRow{
